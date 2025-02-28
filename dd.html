@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite Golf Club</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <!-- <img src="https://v0.dev/placeholder.svg?height=40&width=120" alt="Elite Golf Club"> -->
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#about">About</a>
+                <a href="#courses">Courses</a>
+                <a href="#booking">Book Now</a>
+                <a href="#events">Events</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="book-btn">Book Tee Time</button>
+            <div class="menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="slider">
+            <div class="slide active">
+                <img src="golf-club-with-ball.jpg" alt="Golf Course 1">
+                <div class="slide-content">
+                    <h1>Welcome to Elite Golf Club</h1>
+                    <p>Experience the perfect blend of tradition and luxury</p>
+                    <button class="cta-btn">Explore Courses</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="https://images.unsplash.com/photo-1592919505780-303950717480?q=80&w=1920&auto=format&fit=crop" alt="Golf Course 2">
+                <div class="slide-content">
+                    <h1>Championship Courses</h1>
+                    <p>Designed for both beginners and professionals</p>
+                    <button class="cta-btn">Book Now</button>
+                </div>
+            </div>
+            <div class="slide">
+                <img src="view-hand-with-glove-holding-golf-ball.jpg" alt="Golf Course 3">
+                <div class="slide-content">
+                    <h1>Premium Facilities</h1>
+                    <p>World-class amenities for the ultimate golf experience</p>
+                    <button class="cta-btn">Learn More</button>
+                </div>
+            </div>
+            <button class="slider-btn prev">❮</button>
+            <button class="slider-btn next">❯</button>
+            <div class="dots"></div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Us</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🏌️‍♂️</div>
+                    <h3>Professional Courses</h3>
+                    <p>Championship-level courses designed by renowned architects</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👨‍🏫</div>
+                    <h3>Expert Training</h3>
+                    <p>PGA certified instructors for all skill levels</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏆</div>
+                    <h3>Premium Facilities</h3>
+                    <p>State-of-the-art clubhouse and practice areas</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <h2 class="section-title">Book Your Tee Time</h2>
+            <div class="booking-container">
+                <form id="teeTimeForm" class="booking-form">
+                    <div class="form-group">
+                        <label for="date">Select Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Preferred Time</label>
+                        <select id="time" required>
+                            <option value="">Select Time</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="players">Number of Players</label>
+                        <select id="players" required>
+                            <option value="">Select Players</option>
+                            <option value="1">1 Player</option>
+                            <option value="2">2 Players</option>
+                            <option value="3">3 Players</option>
+                            <option value="4">4 Players</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="book-btn">Book Now</button>
+                </form>
+                <div class="booking-info">
+                    <h3>Booking Information</h3>
+                    <ul>
+                        <li>Advanced booking up to 14 days</li>
+                        <li>Cancellation policy: 24 hours notice</li>
+                        <li>Equipment rental available</li>
+                        <li>Professional caddie service</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Showcase -->
+    <section id="courses" class="courses">
+        <div class="container">
+            <h2 class="section-title">Our Courses</h2>
+            <div class="course-slider">
+                <div class="course-container">
+                    <div class="course-card">
+                        <img src="handsome-man-playing-golf-golf-course.jpg" alt="Championship Course">
+                        <div class="course-info">
+                            <h3>Championship Course</h3>
+                            <p>18 Holes | Par 72 | 7,200 Yards</p>
+                            <button class="course-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="scene-with-friends-golf-course.jpg" alt="Links Course">
+                        <div class="course-info">
+                            <h3>Links Course</h3>
+                            <p>18 Holes | Par 71 | 6,800 Yards</p>
+                            <button class="course-btn">View Details</button>
+                        </div>
+                    </div>
+                    <div class="course-card">
+                        <img src="scene-with-friends-golf-course (1).jpg" alt="Executive Course">
+                        <div class="course-info">
+                            <h3>Executive Course</h3>
+                            <p>9 Holes | Par 36 | 3,200 Yards</p>
+                            <button class="course-btn">View Details</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn prev">❮</button>
+                <button class="slider-btn next">❯</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="golf-ball-field.jpg" alt="Elite Golf Club" class="footer-brand-logo">
+                    <p class="footer-tagline">Experience the perfect blend of tradition and luxury</p>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <span class="icon">📍</span>
+                            <p>123 Golf Club Road<br>Jordan, Aqaba</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">📞</span>
+                            <p>+962 775696927</p>
+                        </div>
+                        <div class="contact-item">
+                            <span class="icon">✉️</span>
+                            <p>Abedrahman@gmail.com</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <div class="links-grid">
+                        <div class="links-column">
+                            <a href="#home">Home</a>
+                            <a href="#about">About</a>
+                            <a href="#courses">Courses</a>
+                        </div>
+                        <div class="links-column">
+                            <a href="#booking">Book Now</a>
+                            <a href="#events">Events</a>
+                            <a href="#contact">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect With Us</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="white"/>
+                                <circle cx="17.5" cy="6.5" r="1.5" fill="white"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="newsletter">
+                        <h4>Subscribe to Our Newsletter</h4>
+                        <form class="newsletter-form">
+                            <input type="email" placeholder="Enter your email" required>
+                            <button type="submit" class="subscribe-btn">Subscribe</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>&copy; 2024 Abed Alrahman. All rights reserved.</p>
+                    <div class="footer-legal">
+                        <a href="#">Privacy Policy</a>
+                        <span class="separator">|</span>
+                        <a href="#">Terms of Service</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
