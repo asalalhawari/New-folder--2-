@@ -82,9 +82,16 @@ menuBtn.addEventListener("click", () => {
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault()
-    document.querySelector(this.getAttribute("href")).scrollIntoView({
-      behavior: "smooth",
-    })
+    const target = this.getAttribute("href")
+    if (target === "#contact") {
+      document.querySelector("footer").scrollIntoView({
+        behavior: "smooth",
+      })
+    } else {
+      document.querySelector(target).scrollIntoView({
+        behavior: "smooth",
+      })
+    }
   })
 })
 
@@ -92,6 +99,10 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
 const teeTimeForm = document.getElementById("teeTimeForm")
 const dateInput = document.getElementById("date")
 const timeSelect = document.getElementById("time")
+const courseSelect = document.getElementById("course")
+const playersSelect = document.getElementById("players")
+const extrasCheckboxes = document.querySelectorAll('input[name="extras"]')
+const notesTextarea = document.getElementById("notes")
 
 // Set min date to tomorrow and max date to 14 days from now
 const tomorrow = new Date()
@@ -108,18 +119,18 @@ function updateTimeSlots() {
   const dayOfWeek = selectedDate.getDay()
 
   // Clear existing options
-  timeSelect.innerHTML = '<option value="">Select Time</option>'
+  timeSelect.innerHTML = '<option value="">اختر الوقت</option>'
 
   // Different time slots for weekends
   const timeSlots =
-    dayOfWeek === 0 || dayOfWeek === 6
+    dayOfWeek === 5 || dayOfWeek === 6
       ? ["06:00", "06:30", "07:00", "07:30", "08:00", "08:30", "09:00"]
       : ["07:00", "07:30", "08:00", "08:30", "09:00", "09:30", "10:00"]
 
   timeSlots.forEach((time) => {
     const option = document.createElement("option")
     option.value = time
-    option.textContent = `${time} ${Number.parseInt(time) < 12 ? "AM" : "PM"}`
+    option.textContent = `${time} ${Number.parseInt(time) < 12 ? "صباحاً" : "مساءً"}`
     timeSelect.appendChild(option)
   })
 }
@@ -133,29 +144,32 @@ teeTimeForm.addEventListener("submit", function (e) {
   const formData = {
     date: dateInput.value,
     time: timeSelect.value,
-    players: document.getElementById("players").value,
+    course: courseSelect.value,
+    players: playersSelect.value,
+    extras: Array.from(extrasCheckboxes)
+      .filter((cb) => cb.checked)
+      .map((cb) => cb.value),
+    notes: notesTextarea.value,
   }
 
   // Here you would typically send this data to a server
-  console.log("Booking Details:", formData)
+  console.log("تفاصيل الحجز:", formData)
 
-  // Create and show toast notification
-  const toast = document.createElement("div")
-  toast.className = "toast"
-  toast.innerHTML = `
-        <span class="success-icon">✓</span>
-        <span class="message">Booking Successful! We'll send you a confirmation email shortly.</span>
-    `
-  document.body.appendChild(toast)
-
-  // Show the toast
-  setTimeout(() => toast.classList.add("show"), 100)
-
-  // Remove the toast after 3 seconds
-  setTimeout(() => {
-    toast.classList.remove("show")
-    setTimeout(() => toast.remove(), 300)
-  }, 3000)
+  // Show Sweet Alert notification
+  Swal.fire({
+    title: "تم الحجز بنجاح!",
+    text: "سنرسل لك رسالة تأكيد عبر البريد الإلكتروني قريباً.",
+    icon: "success",
+    confirmButtonText: "حسناً",
+    confirmButtonColor: "#1a472a",
+    background: "#fff",
+    customClass: {
+      popup: "swal-arabic",
+      title: "swal-title",
+      content: "swal-text",
+      confirmButton: "swal-button",
+    },
+  })
 
   this.reset()
 })
@@ -172,9 +186,7 @@ window.addEventListener("scroll", () => {
   }
 })
 
-// Feature Cards Animation
-const featureCards = document.querySelectorAll(".feature-card")
-
+// Feature Cards and About Features Animation
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -189,10 +201,40 @@ const observer = new IntersectionObserver((entries) => {
   })
 }, observerOptions)
 
-featureCards.forEach((card) => {
-  card.style.opacity = "0"
-  card.style.transform = "translateY(20px)"
-  card.style.transition = "all 0.5s ease-out"
-  observer.observe(card)
+const animateElements = document.querySelectorAll(".feature-card, .about-features .feature")
+animateElements.forEach((element) => {
+  element.style.opacity = "0"
+  element.style.transform = "translateY(20px)"
+  element.style.transition = "all 0.5s ease-out"
+  observer.observe(element)
 })
+
+// About Section Statistics Animation
+const stats = document.querySelectorAll(".stat-number")
+const statsSection = document.querySelector(".about-stats")
+
+const statsObserver = new IntersectionObserver(
+  (entries) => {
+    if (entries[0].isIntersecting) {
+      stats.forEach((stat) => {
+        const targetValue = Number.parseInt(stat.getAttribute("data-value"))
+        let currentValue = 0
+        const duration = 2000 // 2 seconds
+        const stepTime = Math.abs(Math.floor(duration / targetValue))
+
+        const timer = setInterval(() => {
+          currentValue += 1
+          stat.textContent = currentValue
+          if (currentValue >= targetValue) {
+            clearInterval(timer)
+          }
+        }, stepTime)
+      })
+      statsObserver.unobserve(statsSection)
+    }
+  },
+  { threshold: 0.5 },
+)
+
+statsObserver.observe(statsSection)
 
