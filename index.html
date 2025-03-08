@@ -1,324 +1,536 @@
-
-    <!DOCTYPE html>
-    <html lang="ar" dir="rtl">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>نادي الجولف </title>
-        <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    </head>
-    <body>
-        <!-- Navigation -->
-        <nav class="navbar">
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hole in One Golf Resort</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <a href="#main" class="skip-link">تخطي إلى المحتوى الرئيسي</a>
+    
+    <nav class="navbar">
+        <div class="container">
             <div class="nav-container">
                 <div class="logo">
+                    <!-- شعار Hole in One -->
+                    <div class="logo-wrapper">
+                        <div class="golf-ball">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="20" r="20" fill="white" />
+                                <circle cx="15" cy="15" r="1.5" fill="#e2e2e2" />
+                                <circle cx="20" cy="12" r="1.5" fill="#e2e2e2" />
+                                <circle cx="25" cy="15" r="1.5" fill="#e2e2e2" />
+                                <circle cx="15" cy="20" r="1.5" fill="#e2e2e2" />
+                                <circle cx="20" cy="20" r="1.5" fill="#e2e2e2" />
+                                <circle cx="25" cy="20" r="1.5" fill="#e2e2e2" />
+                                <circle cx="15" cy="25" r="1.5" fill="#e2e2e2" />
+                                <circle cx="20" cy="28" r="1.5" fill="#e2e2e2" />
+                                <circle cx="25" cy="25" r="1.5" fill="#e2e2e2" />
+                            </svg>
+                            <div class="golf-flag">
+                                <div class="flag-pole"></div>
+                                <div class="flag">
+                                    <span>1</span>
+                                </div>
+                            </div>
+                            <div class="golf-hole"></div>
+                        </div>
+                        <div class="logo-text">
+                            <h1 class="logo-title">HOLE IN ONE</h1>
+                            <p class="logo-subtitle">GOLF RESORT</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="nav-links">
-                    <a href="#home" class="active">الرئيسية</a>
-                    <a href="#about">عن النادي</a>
-                    <a href="#booking">احجز الآن</a>
-                    <a href="#contact">اتصل بنا</a>
+                    <a href="#home" class="active" data-i18n="nav-home">الرئيسية</a>
+                    <a href="#about" data-i18n="nav-about">عن النادي</a>
+                    <a href="#facilities" data-i18n="nav-facilities">المرافق</a>
+                    <a href="#packages" data-i18n="nav-packages">الباقات</a>
+                    <a href="#booking" data-i18n="nav-booking">احجز الآن</a>
+                    <a href="#contact" data-i18n="nav-contact">اتصل بنا</a>
                 </div>
-                <button class="book-btn">احجز موعد اللعب</button>
-                <div class="menu-btn">
+                <div class="language-switcher">
+                    <button id="langToggle" class="lang-btn">English</button>
+                </div>
+                <button class="book-btn" data-i18n="book-btn">احجز موعد اللعب</button>
+                <div class="menu-btn" aria-expanded="false" aria-label="القائمة">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-        </nav>
-    
-        <!-- Hero Section -->
+        </div>
+    </nav>
+
+    <main id="main" tabindex="-1">
         <section id="home" class="hero">
             <div class="slider">
-                <div class="slide active">
-                    <img src="Golf-Course-1-1440x955-1.webp" alt="ملعب الجولف 1">
-                    <div class="slide-content">
-                     <h1>مرحباً بكم في نادي الجولف النخبة</h1>
-                        <p>استمتع بمزيج مثالي من التقاليد والفخامة</p>
-                        <button class="cta-btn">استكشف الملاعب</button>
+                <div class="slides">
+                    <div class="slide active">
+                        <div class="slide-img-container">
+                            <img src="HERO-1440x955-1.webp" alt="مرحباً بكم في نادي الجولف النخبة" class="slide-img">
+                        </div>
+                        <div class="slide-content">
+                            <h1 data-i18n="hero-title-1">مرحباً بكم في نادي الجولف النخبة</h1>
+                            <p data-i18n="hero-desc-1">استمتع بمزيج مثالي من التقاليد والفخامة</p>
+                            <button class="hero-btn" data-i18n="hero-btn-1">استكشف الملاعب</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-img-container">
+                            <img src="4th_GNP8679-1440x955-1.webp" alt="ملاعب البطولات" class="slide-img">
+                        </div>
+                        <div class="slide-content">
+                            <h1 data-i18n="hero-title-2">ملاعب البطولات</h1>
+                            <p data-i18n="hero-desc-2">مصممة للمبتدئين والمحترفين على حد سواء</p>
+                            <button class="hero-btn" data-i18n="hero-btn-2">احجز الآن</button>
+                        </div>
+                    </div>
+                    <div class="slide">
+                        <div class="slide-img-container">
+                            <img src="Golf-Course-1-1440x955-1.webp" alt="مرافق متميزة" class="slide-img">
+                        </div>
+                        <div class="slide-content">
+                            <h1 data-i18n="hero-title-3">مرافق متميزة</h1>
+                            <p data-i18n="hero-desc-3">وسائل راحة عالمية المستوى لتجربة جولف لا تُنسى</p>
+                            <button class="hero-btn" data-i18n="hero-btn-3">اعرف المزيد</button>
+                        </div>
                     </div>
                 </div>
-                <div class="slide">
-                    <img src="HERO-1440x955-1.webp" alt="ملعب الجولف 2">
-                    <div class="slide-content">
-                        <h1>ملاعب البطولات</h1>
-                        <p>مصممة للمبتدئين والمحترفين على حد سواء</p>
-                        <button class="cta-btn">احجز الآن</button>
-                    </div>
-                </div>
-                <div class="slide">
-                    <img src="4th_GNP8679-1440x955-1.webp" alt="ملعب الجولف 3">
-                    <div class="slide-content">
-                        <h1>مرافق متميزة</h1>
-                        <p>وسائل راحة عالمية المستوى لتجربة جولف لا تُنسى</p>
-                        <button class="cta-btn">اعرف المزيد</button>
-                    </div>
-                </div>
-                <button class="slider-btn prev">❮</button>
-                <button class="slider-btn next">❯</button>
+                <button class="slider-btn prev" aria-label="السابق">
+                    <i class="fas fa-chevron-right" aria-hidden="true"></i>
+                </button>
+                <button class="slider-btn next" aria-label="التالي">
+                    <i class="fas fa-chevron-left" aria-hidden="true"></i>
+                </button>
                 <div class="dots"></div>
             </div>
         </section>
-    
-        <!-- About Section -->
+
         <section id="about" class="about">
             <div class="container">
-                <h2 class="section-title">عن نادي الجولف النخبة</h2>
+                <h2 class="section-title" data-i18n="about-title">عن نادي الجولف النخبة</h2>
                 <div class="about-content">
                     <div class="about-image">
-                        <img src="Golf-Apartents-1440x955-1.webp" alt="مبنى نادي الجولف النخبة">
+                        <img src="HERO-1440x955-1.webp" alt="صورة لملعب الجولف" class="img-fluid">
                     </div>
                     <div class="about-text">
-                        <h3>إرث من التميز</h3>
-                        <p>تأسس نادي الجولف النخبة عام 1985، وأصبح الوجهة الأولى للعبة الجولف في الأردن. يقع النادي وسط المناظر الطبيعية الخلابة في العقبة، ويوفر إطلالات رائعة على البحر الأحمر والجبال المحيطة.</p>
-                        <p>صمم ملاعبنا للبطولات المهندس المعماري الشهير روبرت ترنت جونز جونيور، حيث جمع بين اللعب التحدي والجمال الطبيعي المذهل. سواء كنت محترفًا متمرسًا أو بدأت للتو رحلتك في لعبة الجولف، توفر ملاعبنا تجربة لا تُنسى للاعبين من جميع المستويات.</p>
-                        <div class="about-features">
-                            <div class="feature">
-                                <i class="fas fa-trophy"></i>
-                                <h4>ملاعب البطولات</h4>
-                                <p>ثلاثة ملاعب عالمية المستوى بـ 18 حفرة ومستويات صعوبة متنوعة</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-utensils"></i>
-                                <h4>مطعم فاخر</h4>
-                                <p>مطعم راقي مع إطلالات بانورامية على الملعب</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-graduation-cap"></i>
-                                <h4>أكاديمية الجولف</h4>
-                                <p>تدريب احترافي لجميع الأعمار والمستويات</p>
-                            </div>
-                            <div class="feature">
-                                <i class="fas fa-spa"></i>
-                                <h4>مركز العافية</h4>
-                                <p>مرافق سبا ولياقة بدنية فاخرة للاسترخاء التام</p>
-                            </div>
-                        </div>
+                        <h3 data-i18n="about-subtitle">إرث من التميز</h3>
+                        <p data-i18n="about-p1">تأسس نادي الجولف النخبة عام 1985، وأصبح الوجهة الأولى للعبة الجولف في الأردن. يقع النادي وسط المناظر الطبيعية الخلابة في العقبة، ويوفر إطلالات رائعة على البحر الأحمر والجبال المحيطة.</p>
+                        <p data-i18n="about-p2">صمم ملاعبنا للبطولات المهندس المعماري الشهير روبرت ترنت جونز جونيور، حيث جمع بين اللعب التحدي والجمال الطبيعي المذهل. سواء كنت محترفًا متمرسًا أو بدأت للتو رحلتك في لعبة الجولف، توفر ملاعبنا تجربة لا تُنسى للاعبين من جميع المستويات.</p>
                     </div>
                 </div>
-                <div class="about-stats">
+                <div class="features">
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-golf-ball" aria-hidden="true"></i>
+                        </div>
+                        <h4 data-i18n="feature-title-1">ملاعب البطولات</h4>
+                        <p data-i18n="feature-desc-1">ثلاثة ملاعب عالمية المستوى بـ 18 حفرة ومستويات صعوبة متنوعة</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-utensils" aria-hidden="true"></i>
+                        </div>
+                        <h4 data-i18n="feature-title-2">مطعم فاخر</h4>
+                        <p data-i18n="feature-desc-2">مطعم راقي مع إطلالات بانورامية على الملعب</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-graduation-cap" aria-hidden="true"></i>
+                        </div>
+                        <h4 data-i18n="feature-title-3">أكاديمية الجولف</h4>
+                        <p data-i18n="feature-desc-3">تدريب احترافي لجميع الأعمار والمستويات</p>
+                    </div>
+                    <div class="feature">
+                        <div class="feature-icon">
+                            <i class="fas fa-spa" aria-hidden="true"></i>
+                        </div>
+                        <h4 data-i18n="feature-title-4">مركز العافية</h4>
+                        <p data-i18n="feature-desc-4">مرافق سبا ولياقة بدنية فاخرة للاسترخاء التام</p>
+                    </div>
+                </div>
+                <div class="stats">
                     <div class="stat">
-                        <span class="stat-number" data-value="54">54</span>
-                        <span class="stat-text">حفرة جولف</span>
+                        <div class="stat-number">54</div>
+                        <div class="stat-text" data-i18n="stat-text-1">حفرة جولف</div>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" data-value="12">12</span>
-                        <span class="stat-text">مدرب محترف</span>
+                        <div class="stat-number">12</div>
+                        <div class="stat-text" data-i18n="stat-text-2">مدرب محترف</div>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" data-value="25000">25,000+</span>
-                        <span class="stat-text">زائر سنوياً</span>
+                        <div class="stat-number">25K+</div>
+                        <div class="stat-text" data-i18n="stat-text-3">زائر سنوياً</div>
                     </div>
                     <div class="stat">
-                        <span class="stat-number" data-value="15">15</span>
-                        <span class="stat-text">بطولة دولية استضافها النادي</span>
+                        <div class="stat-number">18</div>
+                        <div class="stat-text" data-i18n="stat-text-4">بطولة دولية استضافها النادي</div>
                     </div>
                 </div>
             </div>
         </section>
-    
-        <!-- Booking Section -->
+
+        <section id="facilities" class="facilities">
+            <div class="container">
+                <h2 class="section-title" data-i18n="facilities-title">المرافق المقدمة</h2>
+                <div class="facilities-grid">
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-golf-ball"></i>
+                        </div>
+                        <h3 data-i18n="facility-courses">ملاعب الجولف</h3>
+                        <p data-i18n="facility-courses-desc">ثلاثة ملاعب لبطولات الجولف بما في ذلك ملعب "سي فيو" الشهير</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h3 data-i18n="facility-clubs">الناديان</h3>
+                        <p data-i18n="facility-clubs-desc">ناديان فاخران مع مرافق متكاملة للأعضاء والزوار</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-hotel"></i>
+                        </div>
+                        <h3 data-i18n="facility-accommodation">الإقامة</h3>
+                        <p data-i18n="facility-accommodation-desc">إقامة فاخرة في الفنادق مع إطلالات رائعة على الملاعب</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-utensils"></i>
+                        </div>
+                        <h3 data-i18n="facility-dining">المطاعم والمقاهي</h3>
+                        <p data-i18n="facility-dining-desc">تجارب طعام متنوعة من المطبخ المحلي والعالمي</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-store"></i>
+                        </div>
+                        <h3 data-i18n="facility-shop">متجر المحترفين</h3>
+                        <p data-i18n="facility-shop-desc">متجر متخصص يقدم أحدث معدات وملابس الجولف</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3 data-i18n="facility-training">ساحة التدريب</h3>
+                        <p data-i18n="facility-training-desc">ساحة تدريب مُضاءة بالأنوار الكشّافة للتدريب في أي وقت</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3 data-i18n="facility-lessons">دروس الجولف</h3>
+                        <p data-i18n="facility-lessons-desc">دروس احترافية للمبتدئين والمتقدمين على يد مدربين معتمدين</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-laptop"></i>
+                        </div>
+                        <h3 data-i18n="facility-digital">التدريب الرقمي</h3>
+                        <p data-i18n="facility-digital-desc">تقنيات تدريب رقمية متطورة لتحليل وتحسين أدائك</p>
+                    </div>
+                    <div class="facility-card">
+                        <div class="facility-icon">
+                            <i class="fas fa-user-tie"></i>
+                        </div>
+                        <h3 data-i18n="facility-caddie">خدمة المساعدة</h3>
+                        <p data-i18n="facility-caddie-desc">خدمة المساعدة على حمل أدوات الجولف من قبل محترفين مدربين</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="packages" class="packages">
+            <div class="container">
+                <h2 class="section-title" data-i18n="packages-section-title">الباقات المخصصة</h2>
+                <div class="packages-grid">
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 data-i18n="five-rounds-title">خمس جولات</h3>
+                            <span class="package-price">€899</span>
+                        </div>
+                        <div class="package-content">
+                            <ul>
+                                <li data-i18n="five-rounds-item1">إقامة كاملة لمدة خمس ليالٍ في جناح فاخر</li>
+                                <li data-i18n="five-rounds-item2">خمس جولات - 18 حفرة</li>
+                                <li data-i18n="five-rounds-item3">جولة واحدة مضمونة في ملعب "سي فيو" الشهير</li>
+                                <li data-i18n="five-rounds-item4">جلسة تدريب رقمية مجانية</li>
+                            </ul>
+                            <button class="package-btn" data-i18n="book-package">احجز الباقة</button>
+                        </div>
+                    </div>
+                    <div class="package-card featured">
+                        <div class="package-badge" data-i18n="most-popular">الأكثر شعبية</div>
+                        <div class="package-header">
+                            <h3 data-i18n="triple-tee-title">الجولة الثلاثية</h3>
+                            <span class="package-price">€499</span>
+                        </div>
+                        <div class="package-content">
+                            <ul>
+                                <li data-i18n="triple-tee-item1">إقامة لمدة ليلتين في غرفة مزدوجة مع وجبة الإفطار</li>
+                                <li data-i18n="triple-tee-item2">ثلاث جولات - 18 حفرة، تشمل خوض جولة واحدة في ملعب "سي فيو" الشهير (إن وجدت)</li>
+                                <li data-i18n="triple-tee-item3">تأجير مجاني للعربات</li>
+                                <li data-i18n="triple-tee-item4">خصم 20% لمتجر المحترفين</li>
+                            </ul>
+                            <button class="package-btn" data-i18n="book-package">احجز الباقة</button>
+                        </div>
+                    </div>
+                    <div class="package-card">
+                        <div class="package-header">
+                            <h3 data-i18n="relaxation-title">استراحة استجمام</h3>
+                            <span class="package-price">€249</span>
+                        </div>
+                        <div class="package-content">
+                            <ul>
+                                <li data-i18n="relaxation-item1">إقامة لليلة واحدة مع وجبة إفطار كاملة</li>
+                                <li data-i18n="relaxation-item2">تناول العشاء في أي من مطاعم المنتجع</li>
+                                <li data-i18n="relaxation-item3">الوصول إلى الملاعب (تطبق الرسوم ويستبعد ملعب "سي فيو")</li>
+                                <li data-i18n="relaxation-item4">تأجير نادي مجاني</li>
+                            </ul>
+                            <button class="package-btn" data-i18n="book-package">احجز الباقة</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="custom-package">
+                    <div class="custom-package-content">
+                        <h3 data-i18n="custom-package-title">باقات مخصصة</h3>
+                        <p data-i18n="custom-package-desc">تتوفر الباقات المخصصة للفعاليات المؤسسية والإقامات الطويلة. يرجى الاتصال بنا لترتيب أي باقات مخصصة.</p>
+                        <button class="package-btn" data-i18n="contact-us">اتصل بنا</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section id="booking" class="booking">
             <div class="container">
-                <h2 class="section-title">احجز موعد اللعب</h2>
+                <h2 class="section-title" data-i18n="booking-title">احجز موعد اللعب</h2>
                 <div class="booking-container">
-                    <form id="teeTimeForm" class="booking-form">
+                    <form id="teeTimeForm" class="booking-form" aria-label="نموذج الحجز">
                         <div class="form-group">
-                            <label for="date">اختر التاريخ</label>
-                            <input type="date" id="date" required>
+                            <label for="date" data-i18n="date-label">اختر التاريخ</label>
+                            <input type="date" id="date" required aria-required="true">
                         </div>
                         <div class="form-group">
-                            <label for="time">الوقت المفضل</label>
-                            <select id="time" required>
-                                <option value="">اختر الوقت</option>
-                                <option value="06:00">6:00 صباحاً</option>
-                                <option value="06:30">6:30 صباحاً</option>
-                                <option value="07:00">7:00 صباحاً</option>
-                                <option value="07:30">7:30 صباحاً</option>
-                                <option value="08:00">8:00 صباحاً</option>
-                                <option value="08:30">8:30 صباحاً</option>
-                                <option value="09:00">9:00 صباحاً</option>
-                                <option value="09:30">9:30 صباحاً</option>
-                                <option value="10:00">10:00 صباحاً</option>
-                                <option value="10:30">10:30 صباحاً</option>
-                                <option value="11:00">11:00 صباحاً</option>
-                                <option value="11:30">11:30 صباحاً</option>
-                                <option value="12:00">12:00 مساءً</option>
-                                <option value="12:30">12:30 مساءً</option>
-                                <option value="13:00">1:00 مساءً</option>
-                                <option value="13:30">1:30 مساءً</option>
-                                <option value="14:00">2:00 مساءً</option>
-                                <option value="14:30">2:30 مساءً</option>
-                                <option value="15:00">3:00 مساءً</option>
+                            <label for="time" data-i18n="time-label">الوقت المفضل</label>
+                            <select id="time" required aria-required="true">
+                                <option value="" data-i18n="time-placeholder">اختر الوقت</option>
+                                <option value="06:00">6:00 AM</option>
+                                <option value="06:30">6:30 AM</option>
+                                <option value="07:00">7:00 AM</option>
+                                <option value="07:30">7:30 AM</option>
+                                <option value="08:00">8:00 AM</option>
+                                <option value="08:30">8:30 AM</option>
+                                <option value="09:00">9:00 AM</option>
+                                <option value="09:30">9:30 AM</option>
+                                <option value="10:00">10:00 AM</option>
+                                <option value="10:30">10:30 AM</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="11:30">11:30 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="12:30">12:30 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="13:30">1:30 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="14:30">2:30 PM</option>
+                                <option value="15:00">3:00 PM</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="course">اختر الملعب</label>
-                            <select id="course" required>
-                                <option value="">اختر الملعب</option>
-                                <option value="championship">ملعب البطولة</option>
-                                <option value="links">ملعب الروابط</option>
-                                <option value="executive">الملعب التنفيذي</option>
+                            <label for="course" data-i18n="course-label">اختر الملعب</label>
+                            <select id="course" required aria-required="true">
+                                <option value="" data-i18n="course-placeholder">اختر الملعب</option>
+                                <option value="sea-view" data-i18n="course-option-1">ملعب البطولة</option>
+                                <option value="mountain" data-i18n="course-option-2">ملعب الروابط</option>
+                                <option value="lakes" data-i18n="course-option-3">الملعب التنفيذي</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="players">عدد اللاعبين</label>
-                            <select id="players" required>
-                                <option value="">اختر عدد اللاعبين</option>
-                                <option value="1">لاعب واحد</option>
-                                <option value="2">لاعبان</option>
-                                <option value="3">3 لاعبين</option>
-                                <option value="4">4 لاعبين</option>
+                            <label for="players" data-i18n="players-label">عدد اللاعبين</label>
+                            <select id="players" required aria-required="true">
+                                <option value="" data-i18n="players-placeholder">اختر عدد اللاعبين</option>
+                                <option value="1" data-i18n="players-option-1">لاعب واحد</option>
+                                <option value="2" data-i18n="players-option-2">لاعبان</option>
+                                <option value="3" data-i18n="players-option-3">3 لاعبين</option>
+                                <option value="4" data-i18n="players-option-4">4 لاعبين</option>
                             </select>
                         </div>
                         <div class="form-group">
-                            <label for="extras">خدمات إضافية</label>
-                            <div class="checkbox-group">
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="cart" name="extras" value="cart">
-                                    <label for="cart">عربة الجولف</label>
+                            <fieldset>
+                                <legend data-i18n="extras-label">خدمات إضافية</legend>
+                                <div class="checkbox-group">
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="cart" name="extras" value="cart">
+                                        <label for="cart" data-i18n="extras-option-1">عربة الجولف</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="clubs" name="extras" value="clubs">
+                                        <label for="clubs" data-i18n="extras-option-2">استئجار مضارب</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="caddie" name="extras" value="caddie">
+                                        <label for="caddie" data-i18n="extras-option-3">خدمة حامل المضارب</label>
+                                    </div>
+                                    <div class="checkbox-item">
+                                        <input type="checkbox" id="lesson" name="extras" value="lesson">
+                                        <label for="lesson" data-i18n="extras-option-4">درس احترافي</label>
+                                    </div>
                                 </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="clubs" name="extras" value="clubs">
-                                    <label for="clubs">استئجار مضارب</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="caddie" name="extras" value="caddie">
-                                    <label for="caddie">خدمة حامل المضارب</label>
-                                </div>
-                                <div class="checkbox-item">
-                                    <input type="checkbox" id="lesson" name="extras" value="lesson">
-                                    <label for="lesson">درس احترافي</label>
-                                </div>
-                            </div>
+                            </fieldset>
                         </div>
                         <div class="form-group">
-                            <label for="notes">طلبات خاصة</label>
-                            <textarea id="notes" rows="3" placeholder="أي طلبات أو ملاحظات خاصة"></textarea>
+                            <label for="notes" data-i18n="notes-label">طلبات خاصة</label>
+                            <textarea id="notes" rows="3" data-i18n="notes-placeholder" placeholder="أي طلبات أو ملاحظات خاصة"></textarea>
                         </div>
-                        <button type="submit" class="book-btn">احجز الآن</button>
+                        <button type="submit" class="book-btn" data-i18n="book-submit">احجز الآن</button>
                     </form>
                     <div class="booking-info">
-                        <h3>معلومات الحجز</h3>
+                        <h3 data-i18n="booking-info-title">معلومات الحجز</h3>
                         <div class="info-section">
-                            <h4><i class="fas fa-info-circle"></i> السياسات العامة</h4>
+                            <h4 data-i18n="policies-title"><i class="fas fa-info-circle" aria-hidden="true"></i> السياسات العامة</h4>
                             <ul>
-                                <li>الحجز المسبق متاح حتى 14 يوماً</li>
-                                <li>سياسة الإلغاء: يجب الإشعار قبل 24 ساعة</li>
-                                <li>تسجيل الوصول قبل 30 دقيقة من موعد اللعب</li>
-                                <li>يجب ارتداء الزي المناسب للعبة الجولف</li>
+                                <li data-i18n="policy-1">الحجز المسبق متاح حتى 14 يوماً</li>
+                                <li data-i18n="policy-2">سياسة الإلغاء: يجب الإشعار قبل 24 ساعة</li>
+                                <li data-i18n="policy-3">تسجيل الوصول قبل 30 دقيقة من موعد اللعب</li>
+                                <li data-i18n="policy-4">يجب ارتداء الزي المناسب للعبة الجولف</li>
                             </ul>
                         </div>
                         <div class="info-section">
-                            <h4><i class="fas fa-tag"></i> عروض خاصة</h4>
+                            <h4 data-i18n="packages-title"><i class="fas fa-tag" aria-hidden="true"></i> عروض خاصة</h4>
                             <div class="package">
-                                <h5>عرض أيام الأسبوع</h5>
-                                <p>من الاثنين إلى الخميس: خصم 20% على الأسعار العادية</p>
+                                <h5 data-i18n="package-title-1">باقة خمس جولات</h5>
+                                <p data-i18n="package-desc-1">إقامة كاملة لمدة خمس ليالٍ في جناح فاخر، خمس جولات - 18 حفرة، جولة واحدة مضمونة في ملعب سي فيو الشهير، جلسة تدريب رقمية مجانية</p>
                             </div>
                             <div class="package">
-                                <h5>باقة الغسق</h5>
-                                <p>بعد الساعة 3:00 مساءً: خصم 30% + عربة جولف مجانية</p>
+                                <h5 data-i18n="package-title-2">الجولة الثلاثية</h5>
+                                <p data-i18n="package-desc-2">إقامة لمدة ليلتين في غرفة مزدوجة مع وجبة الإفطار، ثلاث جولات - 18 حفرة، تشمل خوض جولة واحدة في ملعب سي فيو الشهير، تأجير مجاني للعربات، خصم 20% لمتجر المحترفين</p>
                             </div>
                             <div class="package">
-                                <h5>باقة المجموعات (8+ لاعبين)</h5>
-                                <p>خصم 15% + كرات تدريب مجانية</p>
+                                <h5 data-i18n="package-title-3">استراحة استجمام</h5>
+                                <p data-i18n="package-desc-3">إقامة لليلة واحدة مع وجبة إفطار كاملة، تناول العشاء في أي من مطاعم المنتجع، الوصول إلى الملاعب (تطبق الرسوم ويستبعد ملعب سي فيو)، تأجير نادي مجاني</p>
                             </div>
                         </div>
                         <div class="info-section">
-                            <h4><i class="fas fa-golf-ball"></i> المعدات والخدمات</h4>
+                            <h4><i class="fas fa-golf-ball" aria-hidden="true"></i> المعدات والخدمات</h4>
                             <ul>
-                                <li>استئجار مضارب فاخرة: 50$ للمجموعة</li>
-                                <li>عربة الجولف: 25$ للاعب</li>
-                                <li>حامل مضارب محترف: 80$ للجولة</li>
-                                <li>درس خاص مع مدرب PGA: 75$ للساعة</li>
+                                <li>استئجار مضارب فاخرة: €50 للمجموعة</li>
+                                <li>عربة الجولف: €25 للاعب</li>
+                                <li>خدمة حامل المضارب المحترف: €80 للجولة</li>
+                                <li>درس مع مدرب PGA: €75 للساعة</li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-    
-        <!-- Footer -->
-        <footer class="footer">
-            <div class="container">
-                <div class="footer-content">
-                    <div class="footer-logo">
-                        <img src="golf-ball-field.jpg" alt="نادي الجولف النخبة" class="footer-brand-logo">
-                        <p class="footer-tagline">استمتع بمزيج مثالي من التقاليد والفخامة</p>
-                        <div class="footer-contact-info">
-                            <div class="contact-item">
-                                <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-                                <p>123 شارع نادي الجولف<br>الأردن، العقبة</p>
+    </main>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <!-- شعار Hole in One في التذييل -->
+                    <div class="logo-wrapper">
+                        <div class="golf-ball">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                <circle cx="20" cy="20" r="20" fill="white" />
+                                <circle cx="15" cy="15" r="1.5" fill="#e2e2e2" />
+                                <circle cx="20" cy="12" r="1.5" fill="#e2e2e2" />
+                                <circle cx="25" cy="15" r="1.5" fill="#e2e2e2" />
+                                <circle cx="15" cy="20" r="1.5" fill="#e2e2e2" />
+                                <circle cx="20" cy="20" r="1.5" fill="#e2e2e2" />
+                                <circle cx="25" cy="20" r="1.5" fill="#e2e2e2" />
+                                <circle cx="15" cy="25" r="1.5" fill="#e2e2e2" />
+                                <circle cx="20" cy="28" r="1.5" fill="#e2e2e2" />
+                                <circle cx="25" cy="25" r="1.5" fill="#e2e2e2" />
+                            </svg>
+                            <div class="golf-flag">
+                                <div class="flag-pole"></div>
+                                <div class="flag">
+                                    <span>1</span>
+                                </div>
                             </div>
-                            <div class="contact-item">
-                                <span class="icon"><i class="fas fa-phone"></i></span>
-                                <p>+962 775696927</p>
-                            </div>
-                            <div class="contact-item">
-                                <span class="icon"><i class="fas fa-envelope"></i></span>
-                                <p>Abedrahman@gmail.com</p>
-                            </div>
+                            <div class="golf-hole"></div>
+                        </div>
+                        <div class="logo-text">
+                            <h1 class="logo-title">HOLE IN ONE</h1>
+                            <p class="logo-subtitle">GOLF RESORT</p>
                         </div>
                     </div>
-                    <div class="footer-links">
-                        <h4>روابط سريعة</h4>
-                        <div class="links-grid">
-                            <div class="links-column">
-                                <a href="#home">الرئيسية</a>
-                                <a href="#about">عن النادي</a>
-                                <a href="#courses">الملاعب</a>
-                                <a href="#contact">اتصل بنا</a>
-
-                            </div>
-                            <div class="links-column">
-                                <a href="#booking">احجز الآن</a>
-                                <a href="#events">الفعاليات</a>
-
-                            </div>
+                    <p class="footer-tagline" data-i18n="footer-tagline">استمتع بمزيج مثالي من التقاليد والفخامة</p>
+                    <div class="footer-contact-info">
+                        <div class="contact-item">
+                            <span class="icon"><i class="fas fa-map-marker-alt" aria-hidden="true"></i></span>
+                            <p data-i18n="address">123 شارع نادي الجولف<br>البرتغال</p>
                         </div>
-                    </div>
-                    <div class="footer-social">
-                        <h4>تواصل معنا</h4>
-                        <div class="social-icons">
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-icon">
-                                <i class="fab fa-youtube"></i>
-                            </a>
+                        <div class="contact-item">
+                            <span class="icon"><i class="fas fa-phone" aria-hidden="true"></i></span>
+                            <p>+351 289 123 456</p>
                         </div>
-                        <div class="newsletter">
-                            <h4>اشترك في نشرتنا الإخبارية</h4>
-                            <form class="newsletter-form">
-                                <input type="email" placeholder="أدخل بريدك الإلكتروني" required>
-                                <button type="submit" class="subscribe-btn">اشترك</button>
-                            </form>
+                        <div class="contact-item">
+                            <span class="icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                            <p><a href="mailto:info@holeinone.pt">info@holeinone.pt</a></p>
                         </div>
                     </div>
                 </div>
-                <div class="footer-bottom">
-                    <div class="footer-info">
-                        <p>&copy; 2024 عبد الرحمن. جميع الحقوق محفوظة.</p>
-                        <div class="footer-legal">
-                            <a href="#">سياسة الخصوصية</a>
-                            <span class="separator">|</span>
-                            <a href="#">شروط الخدمة</a>
+                <div class="footer-links">
+                    <h4 data-i18n="quick-links">روابط سريعة</h4>
+                    <div class="links-grid">
+                        <div class="links-column">
+                            <a href="#home" data-i18n="footer-home">الرئيسية</a>
+                            <a href="#about" data-i18n="footer-about">عن النادي</a>
+                            <a href="#courses" data-i18n="footer-courses">الملاعب</a>
+                            <a href="#contact" data-i18n="footer-contact">اتصل بنا</a>
                         </div>
+                        <div class="links-column">
+                            <a href="#booking" data-i18n="footer-booking">احجز الآن</a>
+                            <a href="#packages" data-i18n="footer-events">الفعاليات</a>
+                            <a href="#facilities" data-i18n="footer-facilities">المرافق</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-social">
+                    <h4 data-i18n="connect-with-us">تواصل معنا</h4>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon" aria-label="فيسبوك">
+                            <i class="fab fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="انستغرام">
+                            <i class="fab fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="تويتر">
+                            <i class="fab fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="يوتيوب">
+                            <i class="fab fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    <div class="newsletter">
+                        <h4 data-i18n="newsletter-title">اشترك في نشرتنا الإخبارية</h4>
+                        <form class="newsletter-form">
+                            <input type="email" data-i18n="newsletter-placeholder" placeholder="أدخل بريدك الإلكتروني" required aria-label="البريد الإلكتروني للنشرة الإخبارية">
+                            <button type="submit" class="subscribe-btn" data-i18n="subscribe-btn">اشترك</button>
+                        </form>
                     </div>
                 </div>
             </div>
-        </footer>
-    
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-        <script src="script.js"></script>
-        
-    </body>
-    </html>
+            <div class="footer-bottom">
+                <div class="footer-info">
+                    <p>&copy; 2024 Hole in One Golf Resort. <span data-i18n="copyright">جميع الحقوق محفوظة</span>.</p>
+                    <div class="footer-legal">
+                        <a href="#" data-i18n="privacy-policy">سياسة الخصوصية</a>
+                        <span class="separator">|</span>
+                        <a href="#" data-i18n="terms-of-service">شروط الخدمة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="script.js"></script>
+</body>
+</html>
