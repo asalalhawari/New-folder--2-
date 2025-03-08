@@ -187,8 +187,8 @@ const translations = {
   
   // قسم عن النادي
   'about-title': {
-      'ar': 'عن نادي الجولف النخبة',
-      'en': 'About Hole in One Golf Resort'
+      'ar': 'عن هولو ان ون',
+      'en': 'About Hole in One '
   },
   'about-subtitle': {
       'ar': 'إرث من التميز',
@@ -642,9 +642,9 @@ const translations = {
       'ar': 'خدمة المساعدة على حمل أدوات الجولف من قبل محترفين مدربين',
       'en': 'Caddie service by trained professionals to assist with your golf equipment'
   }
+  
 };
 
-// وظيفة تبديل اللغة
 function toggleLanguage() {
   if (currentLang === 'ar') {
       currentLang = 'en';
